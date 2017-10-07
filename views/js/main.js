@@ -514,7 +514,7 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName('mover');
   // document.body.scrollTop is no longer supported in Chrome.
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     var scrollVar = scrollTop/1250;
@@ -547,7 +547,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   var factor = s / cols;
-  var movingPizza = document.querySelector("#movingPizzas1");
+  var movingPizza = document.getElementById("movingPizzas1");
 
   for (var i = 0; i < 100; i++) {
     var elem = document.createElement('img');
