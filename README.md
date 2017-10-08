@@ -1,17 +1,30 @@
-## Website Performance Optimization portfolio project
+# Website Performance Optimization portfolio project
 
-Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
-
-To get started, check out the repository and inspect the code.
+To get started, check out the [my repository](https://github.com/jkc1996/front-end-nanodegree-mobile-portfolio) and follow the following steps to run the file:
 
 ### Getting started
 
+1. Download the project by clicking on **Clone or download** button.
+2. Open the **index.html** file in your favourite browser.
+3. And have fun !!
+
 #### Part 1: Optimize PageSpeed Insights score for index.html
 
-Some useful tips to help you get started:
+_To achieve page speed of **more than 90** I followed the below steps:_
 
-1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
+1. Biggest issue is that **blocking of page rendering due to CSS**
+    - As the solution it's better if we include the both CSS styles inside the HTML.i.e **"inline the css"**.
+    - Another issue is **google web font**.for this i found this amazing css trick called **"@font face"**.for solution of this i downloaded the both sans sarif file for 400px and 700px and included in our css style.
+
+2. Added my google analytics id inside my code and called the **analytics script aysnc** at the end of body tag.
+3. **Added the perfmetters.js** file inside index.html
+4. On main page pizza image is too big.**Using Gulp** i compressed the image.
+
+### How to use gulp ?
+
+_Gulp is the webtool to automically perform the optimizations like minification of CSS and JS files and image optimization._
+
+For using gulp in your project you will require the package called **Package.json**.This package will include the dependancies which is require for your task like minify JS and CSS and for image compression. 
 
   ```bash
   $> cd /path/to/your-project-folder
