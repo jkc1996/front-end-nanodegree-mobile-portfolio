@@ -17,13 +17,13 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans Regular'), local('OpenSans-Regular'), url('css/sans400.woff2') format('woff2');
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url('dist/css/sans400.woff2') format('woff2');
 }
     @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('css/sans700.woff2') format('woff2');
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('dist/css/sans700.woff2') format('woff2');
 }
 html {
   font-size: 100%;
@@ -34,41 +34,33 @@ html {
 }
 body { margin: 0; font-size: 14px; line-height: 1.61; font-weight: 400; }
 body, button, input, select, textarea { font-family: 'Open Sans', sans-serif; color: #333; }
-
 a { color: #12C; }
 a:visited { color: #61C; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { color: #c00; outline: 0; }
-
 b, strong { font-weight: bold; }
 pre, code { font-family: monospace, monospace; font-size: 1em; }
 ul, ol { margin: 1em 0; padding: 0 0 0 20px; }
 img { border: 0; max-width: 100%; }
-
 body { background: #fff; }
 header, footer, .container { max-width: 45em; margin: 0 auto; }
-
 header { padding: 0 0.5em; color: #C90B0B; }
 header img { border-radius: 40px; float: left; }
 header p { font-size:1.5em; font-weight: bold; padding-left: 4em;}
 header p span { font-size: 0.8em; font-weight: normal;}
-
 .hero { padding: 2em; background-color: #f8f8f8; font-size:1.2em;
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
 }
-
 .content { padding: 1em 1em; }
 .content li { list-style-type: none; font-size: 1.1em;}
 li img { float:left; padding-right: 1em; }
 li p { font-size: 0.9em; font-style: italic; }
-
 footer {
   padding: 0 0.5em;
   border-top: 1px solid #ccc;
 }
 footer span { float: right; font-style: italic; }
-
 /* Smartphones (portrait) */
 @media only screen and (max-width: 480px) {
   body { font-size: 12px;}
@@ -80,13 +72,13 @@ footer span { float: right; font-style: italic; }
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans Regular'), local('OpenSans-Regular'), url('css/sans400.woff2') format('woff2');
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url('dist/css/sans400.woff2') format('woff2');
 }
     @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('css/sans700.woff2') format('woff2');
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('dist/css/sans700.woff2') format('woff2');
 }
 @media print {
   * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
@@ -103,7 +95,6 @@ footer span { float: right; font-style: italic; }
     <script>
       (function(w,g){w['GoogleAnalyticsObject']=g;
       w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
-
       // Optional TODO: replace with your Google Analytics profile ID.
       ga('create', 'UA-107493500-1');
       ga('send', 'pageview');
@@ -112,7 +103,6 @@ footer span { float: right; font-style: italic; }
     <script>
     // Measuring the Critical Rendering Path with Navigation Timing
 // https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp
-
 function logCRP() {
   var t = window.performance.timing,
     dcl = t.domContentLoadedEventStart - t.domLoading,
@@ -120,7 +110,6 @@ function logCRP() {
   var stats = document.getElementById("crp-stats");
   stats.textContent = 'DCL: ' + dcl + 'ms, onload: ' + complete + 'ms';
 }
-
 window.addEventListener("load", function(event) {
   logCRP();
 });
@@ -129,7 +118,7 @@ window.addEventListener("load", function(event) {
 
   <body>
     <header>
-      <a href="/"><img src="img/profilepic.jpg"></a>
+      <a href="/"><img src="dist/img/profilepic.jpg"></a>
       <p>Cameron Pittman<br><span>Course Developer</span></p>
     </header>
 
