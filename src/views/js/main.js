@@ -454,9 +454,23 @@ var resizePizzas = function(size) {
    * also only addidng 8% additional width newWidth is doing nothing.So i removed it.
    */
   function changePizzaSizes(size) {
+    switch(size) {
+        case "1":
+          newWidth = 25;
+          break;
+        case "2":
+          newWidth = 33.3;
+          break;
+        case "3":
+          newWidth = 50;
+          break;
+        default:
+          console.log("bug in sizeSwitcher");
+      }
+
     var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
     for (var i = 0; i < randomPizzas.length; i++) {
-      randomPizzas[i].style.width = newwidth;
+      randomPizzas[i].style.width = newWidth + "%";
     }
   }
 
