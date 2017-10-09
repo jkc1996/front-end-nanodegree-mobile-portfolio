@@ -28,8 +28,13 @@ form {
 #pizzaSize {
   font-weight: 800;
 }
-
+/* Added the transform so we can increase our sites performance with hardware accelerated CSS.
+ * The GPU can be trigger by simply including the transform: translateZ(0); declaration.
+ * Adding the backface-visibility property with the hidden value can make a huge difference
+ * in no so powerful equipments as it enables hardware acceleration.*/
 .mover {
+  visibility-backface: hidden;
+  transform: translateZ(0);
   position: fixed;
   width: 256px;
   z-index: -1;
