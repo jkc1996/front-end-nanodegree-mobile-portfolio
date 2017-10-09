@@ -23,17 +23,21 @@ _To achieve page speed of **more than 90** I followed the below steps:_
 ### Part 2: Optimize Frames per Second in pizza.html & reducing pizza resizing time
 
 _To optimize views/pizza.html, we need to modify `views/js/main.js` until our frames per second rate is 60 fps or higher._
-
-1. Using **Chrome Dev Timeline Tool**, you will find that the sliding background pizza are the root cause of our less fps rate. the code for that is inside the `updatePositions() function`. So I made following changes:
+1. In the `resizePizzas()`function, replaced `querySelector()` with the `document.getElementById()` because this api calls faster.
+2. for variable `randomPizzas` replaced `querySelector()` with `document.getElementsByClassName()`.
+3. Saved `randomPizza.length()` inside variable called `len` and defined this variable inside the for-loop.
+4. Using **Chrome Dev Timeline Tool**, you will find that the sliding background pizza are the root cause of our less fps rate. the code for that is inside the `updatePositions() function`. So I made following changes:
     - Defined a new variable called `scrollTop` to store the no. of pixels bar was scrolled to the top.
     - Too much phases of pizzas also creating the our frame rate.for that i defined phase as an array variable to store only 5 values and moved it outside of the loop.
     - Then Replaced the referance to items array using `getElementsByClassName` instead of `querySelectorAll`.
-    - At the end of function, took the calculation s/cols outside the loop and saved it in var called `factor`.
-    - Then replace querySelector with getElementById and moved it outside the loop. Also reduced the no pizzas to 100.
+    - Defined the variable `elem` inside the for-loop.that will prevent it from being created every time loop is executed.
+    - Then replace `querySelector` with `getElementById` and moved it outside the loop. **Also reduced the no pizzas to 24**.
 
-2. **Chrome Dev Tools** shows that when we move the **Pizza slider**,it is causing the **Forced Synchronous Layout**.
+5. **Chrome Dev Tools** shows that when we move the **Pizza slider**,it is causing the **Forced Synchronous Layout**.
     - `changePizzaSizes(size)` is responsible for this FSL. There is also the violation of DRY.Replaced the queryselector with variable called randomPizza and moved it out of loop.
     - No need of dx inside this function it is constant based on the size.also only addidng 8% additional width, `newWidth` is doing nothing. So i removed it and made 3 cases for newWidth.
+
+6. In `src/views/css/style.css`, I included the CSS properties called `transform: tarnslateZ(0)` and added `backface-visibility` with `hidden` value. Both will accelerate our site performance. 
 
 ## What is Gulp ?
 
